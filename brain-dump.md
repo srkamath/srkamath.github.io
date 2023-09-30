@@ -1,3 +1,12 @@
+re: India, Canada, and the Khalistani movement
+
+Khalistani movement: History of violent terrorist activities including [bombing airplanes](https://en.wikipedia.org/wiki/Air_India_Flight_182) and [assasinating a sitting prime minister](https://en.wikipedia.org/wiki/Assassination_of_Indira_Gandhi) of India. 
+- Canada as the base 
+- Links with ISI
+
+
+
+-----
 re: India's population exceeds China (April 2023)
 
 UN and similar organizations have been making doomsday predictions about India's population since the 90s - making it sound like the country has a careless attitude about population growth 🙂.  I think it is quite the opposite. In fact, we should be proud of how the last few generations have progressively lowered children per family without need for any draconian measures. There may be a few segments that aren't convinced yet - I won't deny it.
