@@ -1,1 +1,263 @@
-Hello World!
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Works by Srikanth Kamath.">
+  <title>Srikanth Kamath · Works</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f5f0e6;
+      --ink: #1f2925;
+      --muted: #67716b;
+      --line: rgba(31, 41, 37, .16);
+      --sea: #1d5c5a;
+      --sea-dark: #133f3e;
+      --card: rgba(255, 255, 255, .58);
+      --shadow: 0 18px 48px rgba(31, 41, 37, .09);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { background: var(--paper); }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 84% 8%, rgba(29, 92, 90, .12), transparent 33rem),
+        linear-gradient(180deg, #faf7f0 0%, var(--paper) 100%);
+      font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+      line-height: 1.55;
+    }
+
+    a { color: inherit; }
+
+    .page {
+      width: min(1120px, calc(100% - 40px));
+      min-height: 100vh;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 24px;
+      padding: 32px 0 28px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .name {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 650;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .label {
+      color: var(--muted);
+      font-size: .86rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    main {
+      flex: 1;
+      padding: clamp(64px, 10vw, 124px) 0 80px;
+    }
+
+    .intro {
+      max-width: 780px;
+      margin-bottom: clamp(52px, 8vw, 88px);
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--sea);
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 14ch;
+      margin: 0;
+      font-size: clamp(2.65rem, 7vw, 5.8rem);
+      font-weight: 520;
+      letter-spacing: -.045em;
+      line-height: .98;
+    }
+
+    .intro p:last-child {
+      max-width: 610px;
+      margin: 28px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+    }
+
+    .projects-title {
+      margin: 0 0 18px;
+      font-size: .8rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+      gap: 20px;
+    }
+
+    .project {
+      position: relative;
+      min-height: 310px;
+      overflow: hidden;
+      padding: clamp(26px, 4vw, 42px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-decoration: none;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      box-shadow: var(--shadow);
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }
+
+    .project::after {
+      content: "";
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      right: -78px;
+      bottom: -82px;
+      border: 1px solid rgba(29, 92, 90, .18);
+      border-radius: 50%;
+      box-shadow: 0 0 0 26px rgba(29, 92, 90, .035), 0 0 0 52px rgba(29, 92, 90, .025);
+      pointer-events: none;
+    }
+
+    .project:hover,
+    .project:focus-visible {
+      transform: translateY(-3px);
+      border-color: rgba(29, 92, 90, .48);
+      box-shadow: 0 22px 56px rgba(31, 41, 37, .13);
+    }
+
+    .project:focus-visible {
+      outline: 3px solid rgba(29, 92, 90, .28);
+      outline-offset: 4px;
+    }
+
+    .project-number,
+    .project-meta {
+      position: relative;
+      z-index: 1;
+      color: var(--muted);
+      font-size: .76rem;
+      font-weight: 650;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .project-copy {
+      position: relative;
+      z-index: 1;
+      max-width: 610px;
+      margin: 44px 0;
+    }
+
+    .project h2 {
+      max-width: 14ch;
+      margin: 0 0 16px;
+      font-size: clamp(2rem, 5vw, 3.45rem);
+      font-weight: 520;
+      letter-spacing: -.035em;
+      line-height: 1;
+    }
+
+    .project p {
+      max-width: 56ch;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .open {
+      position: relative;
+      z-index: 1;
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--sea-dark);
+      font-size: .88rem;
+      font-weight: 700;
+    }
+
+    .open::after {
+      content: "→";
+      font-size: 1.15rem;
+      transition: transform .18s ease;
+    }
+
+    .project:hover .open::after { transform: translateX(4px); }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 24px 0 32px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      font-size: .82rem;
+    }
+
+    @media (max-width: 600px) {
+      .page { width: min(100% - 28px, 1120px); }
+      header { padding-top: 24px; }
+      main { padding-top: 56px; }
+      .project { min-height: 340px; }
+      footer { flex-direction: column; gap: 6px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .project, .open::after { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <p class="name">Srikanth Kamath</p>
+    </header>
+
+    <main>
+      <section aria-labelledby="projects-heading">
+        <h2 class="projects-title" id="projects-heading">Explore</h2>
+        <div class="projects">
+          <a class="project" href="history-of-dakshina-kannada.html">
+            <div class="project-copy">
+              <h2>Tulunadu · Dakshina Kannada</h2>
+              <p>Explore the history and geography of the narrow region between the Arabian Sea and the Western Ghats—from Kasaragod through Mangaluru and Udupi to Kundapura.</p>
+            </div>
+            <span class="open">Explore the work</span>
+          </a>
+          <!-- Future works: copy the project card block above, update the number, title, description, and href. -->
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© 2026 Srikanth Kamath</span>
+    </footer>
+  </div>
+</body>
+</html>
